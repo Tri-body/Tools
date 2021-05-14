@@ -3,7 +3,7 @@ const path = require('path')
 const config = {
     mode:"production",
     context: path.resolve(__dirname, './'),
-    entry: './index.ts',
+    entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist/'),
         filename: 'db23converter.js',

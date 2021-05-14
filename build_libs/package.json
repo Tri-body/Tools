@@ -5,8 +5,7 @@
     "main": "./dist/db23converter.js",
     "typings": "./typsings/db23converter.d.ts",
     "scripts": {
-        "build": "rimraf ./dist && webpack --progress --config webpack.conf.js",
-        "prepublish": "npm run build"
+        "build": "rimraf ./dist && webpack --progress --config webpack.conf.js"
     },
     "keywords": [],
     "author": "",
