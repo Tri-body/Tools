@@ -1,0 +1,21 @@
+{
+    "name": "db23converter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./dist/db23converter.js",
+    "typings": "./typsings/db23converter.d.ts",
+    "scripts": {
+        "build": "rimraf ./dist && webpack --progress --config webpack.conf.js",
+        "prepublish": "npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "rimraf": "^2.6.2",
+        "ts-loader": "^5.2.1",
+        "typescript": "^3.1.1",
+        "webpack": "^4.20.2",
+        "webpack-cli": "^3.1.2"
+    }
+}

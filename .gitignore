@@ -58,3 +58,7 @@ typings/
 .env
 
 .vscode
+
+dist
+
+/build_libs/package-lock.json

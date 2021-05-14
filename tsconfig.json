@@ -20,6 +20,7 @@
 	"exclude": [
 		"node_modules",
 		"out",
-		"backup"
+		"backup",
+		"build_libs"
 	]
 }

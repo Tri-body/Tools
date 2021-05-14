@@ -12,25 +12,29 @@ export default function (jsonString: string, getTextureAtlases: () => dbft.Textu
 
     try {
         const json = JSON.parse(jsonString);
-        const version = json["version"];
-
-        if (dbft.DATA_VERSIONS.indexOf(version) < dbft.DATA_VERSIONS.indexOf(dbft.DATA_VERSION_4_0)) {
-            textureAtlases = getTextureAtlases();
-            const data = new dbftV23.DragonBones();
-            object.copyObjectFrom(json, data, dbftV23.copyConfig);
-
-            return V23ToV45(data);
-        }
-
-        const result = new dbft.DragonBones();
-        object.copyObjectFrom(json, result, dbft.copyConfig);
-
-        return result;
+        return josnToFormat(json, getTextureAtlases);
     }
     catch (error) {
     }
 
     return null;
+}
+
+export function josnToFormat(json: any, getTextureAtlases: () => dbft.TextureAtlas[]): dbft.DragonBones | null {
+    const version = json["version"];
+
+    if (dbft.DATA_VERSIONS.indexOf(version) < dbft.DATA_VERSIONS.indexOf(dbft.DATA_VERSION_4_0)) {
+        textureAtlases = getTextureAtlases();
+        const data = new dbftV23.DragonBones();
+        object.copyObjectFrom(json, data, dbftV23.copyConfig);
+
+        return V23ToV45(data);
+    }
+
+    const result = new dbft.DragonBones();
+    object.copyObjectFrom(json, result, dbft.copyConfig);
+
+    return result;
 }
 
 let textureAtlases: dbft.TextureAtlas[];
