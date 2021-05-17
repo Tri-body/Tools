@@ -6,8 +6,8 @@ const config = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist/'),
-        filename: 'db23converter.js',
-        library: 'db23converter',
+        filename: 'dbconverter.js',
+        library: 'dbconverter',
         libraryTarget: 'umd'
     },
     optimization: {
@@ -37,8 +37,8 @@ const config = {
 const config_min = Object.assign({}, config, {
     output: {
         path: path.resolve(__dirname, 'dist/'),
-        filename: 'db23converter.min.js',
-        library: 'db23converter',
+        filename: 'dbconverter.min.js',
+        library: 'dbconverter',
         libraryTarget: 'umd'
     },
     optimization: {

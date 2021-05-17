@@ -1,13 +1,16 @@
 {
-    "name": "db23converter",
+    "name": "dragonbones-converter",
     "version": "1.0.0",
-    "description": "",
-    "main": "./dist/db23converter.js",
-    "typings": "./typsings/db23converter.d.ts",
+    "description": "a library for convert dragonbones data from old version(2.3) to new version(5.6)",
+    "main": "./dist/dbconverter.js",
+    "typings": "./typsings/dbconverter.d.ts",
     "scripts": {
         "build": "rimraf ./dist && webpack --progress --config webpack.conf.js"
     },
-    "keywords": [],
+    "keywords": [
+        "dragonbones",
+        "egret"
+    ],
     "author": "",
     "license": "MIT",
     "devDependencies": {
