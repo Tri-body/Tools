@@ -1,14 +1,15 @@
 {
     "name": "dragonbones-converter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "a library for convert dragonbones data from old version(2.3) to new version(5.6)",
     "main": "./dist/dbconverter.js",
-    "typings": "./typsings/dbconverter.d.ts",
+    "typings": "./types/dbconverter.d.ts",
     "repository": {
         "url": "https://github.com/Tri-body/Tools/tree/lib/build_libs"
     },
     "scripts": {
-        "build": "rimraf ./dist && webpack --progress --config webpack.conf.js"
+        "build": "rimraf ./dist && webpack --progress --config webpack.conf.js",
+        "prepare": "npm run build"
     },
     "keywords": [
         "dragonbones",
@@ -22,5 +23,8 @@
         "typescript": "^3.1.1",
         "webpack": "^4.20.2",
         "webpack-cli": "^3.1.2"
+    },
+    "dependencies": {
+        "x2js": "^3.4.1"
     }
 }

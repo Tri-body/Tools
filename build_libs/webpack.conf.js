@@ -1,7 +1,7 @@
 const path = require('path')
 
-const config = {
-    mode:"production",
+module.exports = {
+    mode: "production",
     context: path.resolve(__dirname, './'),
     entry: './src/index.ts',
     output: {
@@ -11,41 +11,21 @@ const config = {
         libraryTarget: 'umd'
     },
     optimization: {
-        minimize: false
+        minimize: true
     },
     resolve: {
         extensions: ['.ts', '.js', '.json']
     },
     module: {
-        rules: [
-            {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader',
-                        options: {
-                            transpileOnly: true
-                        }
-                    }
-                ]
-            },
-        ]
+        rules: [{
+            test: /\.ts(x?)$/,
+            exclude: /node_modules/,
+            use: [{
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: false
+                }
+            }]
+        }, ]
     }
 }
-
-const config_min = Object.assign({}, config, {
-    output: {
-        path: path.resolve(__dirname, 'dist/'),
-        filename: 'dbconverter.min.js',
-        library: 'dbconverter',
-        libraryTarget: 'umd'
-    },
-    optimization: {
-        minimize: true
-    }
-})
-
-module.exports = [
-    config, config_min,       
-];

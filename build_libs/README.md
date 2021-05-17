@@ -9,21 +9,17 @@ npm install
 npm run build
 ```
 
-##### typings
-
-```sh
-typings
-├── dbconverter.d.ts     # for es module project
-└── egret
-    └── dbconverter.d.ts # for egret namespace project
-```
-
 ##### useage
 
 ```js
-import { dbToNew } from 'dbconverter'
+// npm i -S dragonbones-converter
 
-newSkeletonJson = dbToNew(oldSkeletonJson, textureJson);
+import { DragonBonesXmlUtil, dbToNew } from 'dbconverter'
+
+oldSkeletonJson = DragonBonesXmlUtil.parseXmlStrToJson(oldSkeletonXmlStr); // old sk data xml to json
+textureJson = DragonBonesXmlUtil.parseXmlStrToJson(textureXmlStr); // tex xml to json
+
+newSkeletonJson = dbToNew(oldSkeletonJson, textureJson); // old data to latest version data
 
 ```
 
