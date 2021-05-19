@@ -254,7 +254,7 @@ export class DragonBonesXmlUtil {
       test: (name: string, value: any): any => {
         return name !== DragonBonesConstValues.A_NAME
           && name !== DragonBonesConstValues.A_PARENT
-          && !isNaN(value);
+          && (name === DragonBonesConstValues.A_TWEEN_EASING || !isNaN(value));
       },
       convert: (name: string, value: any): any => {
         return Number(value);
@@ -278,7 +278,8 @@ export class DragonBonesXmlUtil {
       DragonBonesXmlUtil._parser = new X2JS({
         attributePrefix: '',
         ignoreRoot: true,
-        attributeConverters: DragonBonesXmlUtil.attributeConverters
+        attributeConverters: DragonBonesXmlUtil.attributeConverters,
+        emptyNodeForm: 'object'
       });
     }
     const result = DragonBonesXmlUtil._parser.xml2js<any>(xmlStr);

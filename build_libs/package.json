@@ -1,6 +1,6 @@
 {
     "name": "dragonbones-converter",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "a library for convert dragonbones data from old version(2.3) to new version(5.6)",
     "main": "./dist/dbconverter.js",
     "typings": "./types/dbconverter.d.ts",
